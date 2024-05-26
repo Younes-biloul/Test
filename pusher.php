@@ -4,8 +4,8 @@
 $updateLogFile = 'update-log.txt';
 
 // Loop through each day of a specific month as an example
-$year = "2023";
-for ($month = 9; $month <= 12; $month++) { // Loop through months
+$year = "2024";
+for ($month = 1; $month <= 3; $month++) { // Loop through months
     for ($day = 1; $day <= date('t', mktime(0, 0, 0, $month, 1, $year)); $day++) { // Loop through days of the month
 
         // Determine a random number of commits for this day
@@ -25,6 +25,7 @@ for ($month = 9; $month <= 12; $month++) { // Loop through months
             $commands = [
                 "git add $updateLogFile",
                 "git commit --date=\"$commitDate\" -m \"$commitName\"",
+                
             ];
 
             foreach ($commands as $command) {
